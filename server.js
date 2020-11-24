@@ -7,6 +7,7 @@ const PORT = 3000;
 
 const app = express();
 
+//Boiler plate
 app.use(logger("dev"));
 
 app.use(compression());
