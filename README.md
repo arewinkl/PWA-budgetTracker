@@ -40,3 +40,7 @@ These screenshots show exactly how the application works and how your budget cha
 This second screenshot shows the errors that are given when the network connection is lost.
 
 ![screen shot](public/assets/budget-tracker3.png)
+
+
+## deployment
+To deploy this project you need to begin by doing a npm install for all of the packages that were included in the initial project. Then all of the other files need to be created so that the app can run exactly how it is supposed to. Once all of the errors have been debugged the app needs to be pushed to heroku so it can be viewed properly.
