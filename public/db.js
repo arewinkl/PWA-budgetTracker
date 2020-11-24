@@ -56,7 +56,7 @@ function checkDatabase() {
         return response.json();
       })
       .then(() => {
-        // delete records if successful
+        // DELETE THE RECORD IF THIS IS SUCCESSFUL.
         const transaction = db.transaction(["offline"], "readwrite");
         const store = transaction.objectStore("offline");
         store.clear();
