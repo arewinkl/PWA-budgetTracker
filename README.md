@@ -30,3 +30,13 @@ WHEN the user inputs a withdrawal or deposit
 THEN that will be shown on the page, and added to their transaction history when their connection is back online.
 
 - - -
+
+## ScreenShots
+These screenshots show exactly how the application works and how your budget changes based on the additions and subtractions that you apply.
+
+![screen shot](public/assets/budget-tracker1.png)
+
+![screen shot](public/assets/budget-tracker2.png)
+This second screenshot shows the errors that are given when the network connection is lost.
+
+![screen shot](public/assets/budget-tracker3.png)
