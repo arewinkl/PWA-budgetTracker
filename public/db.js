@@ -8,37 +8,35 @@ const indexedDB =
 
 let db;
 
-// Tell indexedDb to open (or create) whatever database you want to work with
+//create  database to work with
 const request = indexedDB.open("budgetTracker", 1);
 
-// Set up your object store
+// Set up object store
 request.onupgradeneeded = ({ target }) => {
   let db = target.result;
   db.createObjectStore("offline", { autoIncrement: true });
 };
 
-// Leave this code as-is
 request.onsuccess = ({ target }) => {
   db = target.result;
-  // check if app is online before reading from db
+  // check if app is online before reading
   if (navigator.onLine) {
     checkDatabase();
   }
 };
 
-// Simple error handler. Leave as-is
+
 request.onerror = function(event) {
   console.log("Woops! " + event.target.errorCode);
 };
 
-// This function is called when it's time to save data to the indexedDb
+// save data to the indexedDb
 function saveRecord(record) {
   const transaction = db.transaction(["offline"], "readwrite");
   const store = transaction.objectStore("offline");
   store.add(record);
 }
 
-// This function runs when we detect that the internet connection is working again. It sends a post request to the server with all the saved data so that the data can be synced with the server, and then it wipes out the existing indexedDb. You can keep as-is, unless you want to change the name of the fetch route.
 function checkDatabase() {
   const transaction = db.transaction(["offline"], "readwrite");
   const store = transaction.objectStore("offline");
